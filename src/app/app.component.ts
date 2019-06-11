@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { QuizService } from "./quiz.service";
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'triviaAPP';
+
+  constructor(private route: ActivatedRoute, private quizService: QuizService) { }
+
+  ngOnInit() {
+ 
+  }
+
 }
+
+
+

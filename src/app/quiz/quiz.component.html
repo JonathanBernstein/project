@@ -1,0 +1,16 @@
+<form #nameForm="ngForm" (ngSubmit)="submitName(nameForm)">
+  <label for="Enter a Username"></label>
+  <input type="text" ngModel name = "name">
+</form>
+
+
+<form  #quizForm = "ngForm" (ngSubmit)="submitQuiz(quizForm)">
+  <div *ngFor="let ask of questions; index as i">
+  <p>{{ask.question_name}}</p>
+  <input ngModel (click)="check (ask.choice_1, ask.answer, i)" type="radio" value="{{ask.choice_1}}" name="question{{i + 1}}">{{ask.choice_1}}
+  <input ngModel (click)="check (ask.choice_2, ask.answer, i)"type="radio" value="{{ask.choice_2}}"  name="question{{i + 1}}">{{ask.choice_2}}
+  <input ngModel (click)="check (ask.choice_3, ask.answer, i)" type="radio" value="{{ask.choice_3}}" name="question{{i + 1}}">{{ask.choice_3}}
+  <input ngModel (click)="check (ask.choice_4, ask.answer, i)" type ="radio" value="{{ask.choice_4}}" name="question{{i + 1}}">{{ask.choice_4}}
+  </div>
+  <button >Score My Quiz</button>
+</form>
